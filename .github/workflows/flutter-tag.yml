@@ -1,6 +1,8 @@
 name: Flutter Tag Build
 
 on:
+permissions:
+  contents: write
   workflow_dispatch:
   push:
     tags:
