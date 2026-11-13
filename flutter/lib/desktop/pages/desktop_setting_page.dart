@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -432,7 +432,7 @@ class _GeneralState extends State<_General> {
     // The bindings JSON (LocalConfig key `keyboard-shortcuts`) holds three
     // flags + the bindings list: {enabled, pass_through, bindings}. When the
     // master is off, the pass-through toggle and the Configure entry are
-    // hidden — both are meaningless without an active matcher.
+    // hidden вЂ” both are meaningless without an active matcher.
     return StatefulBuilder(builder: (context, setLocalState) {
       final enabled = ShortcutModel.isEnabled();
       return _Card(title: 'Keyboard shortcuts', children: [
@@ -927,14 +927,14 @@ class _GeneralState extends State<_General> {
   // How long an already-connected relay is held back to give the direct WebRTC
   // attempt a chance to win. It only means anything while WebRTC is on, so it
   // follows the checkbox as an indented sub-option and is hidden outright when
-  // the box is clear — the shape `directIp` uses for its port.
+  // the box is clear вЂ” the shape `directIp` uses for its port.
   List<Widget> webrtcOptions(BuildContext context) {
     final stored = bind.mainGetLocalOption(key: kOptionRelayFallbackDelay);
     final controller = TextEditingController(text: stored);
     // What the field holds against what is saved. Apply is offered only while
     // the two differ, so an untouched field shows no button at all, and neither
     // does one typed back to its saved value or cleared when nothing was saved
-    // — the state an "edited" flag alone would still call dirty.
+    // вЂ” the state an "edited" flag alone would still call dirty.
     final typed = RxString(stored);
     final saved = RxString(stored);
     return [
@@ -1444,8 +1444,8 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
             if (usePassword && !isChangePermanentPasswordDisabled())
               _SubButton('Set permanent password', setPasswordDialog,
                   permEnabled && !locked),
-            // if (usePassword)
-            //   hide_cm(!locked).marginOnly(left: _kContentHSubMargin - 6),
+if (usePassword)
+hide_cm(!locked).marginOnly(left: _kContentHSubMargin - 6),
             if (usePassword) radios[2],
           ]);
         })));
@@ -2643,7 +2643,7 @@ class _AboutState extends State<_About> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Copyright © ${DateTime.now().toString().substring(0, 4)} Purslane Tech Pte. Ltd.\n$license',
+                            'Copyright В© ${DateTime.now().toString().substring(0, 4)} Purslane Tech Pte. Ltd.\n$license',
                             style: const TextStyle(color: Colors.white),
                           ),
                           Text(
@@ -3395,3 +3395,4 @@ void changeSocks5Proxy() async {
 }
 
 //#endregion
+

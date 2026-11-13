@@ -1,4 +1,4 @@
-#[path = "ipc/auth.rs"]
+﻿#[path = "ipc/auth.rs"]
 mod ipc_auth;
 #[cfg(windows)]
 #[path = "ipc/windows.rs"]
@@ -1626,7 +1626,7 @@ pub async fn start_pa() {
                             let mut buf: Vec<u8> = vec![0; AUDIO_DATA_SIZE_U8];
                             match psimple::Simple::new(
                                 None,                             // Use the default server
-                                &crate::get_app_name(),           // Our application’s name
+                                &crate::get_app_name(),           // Our applicationвЂ™s name
                                 pulse::stream::Direction::Record, // We want a record stream
                                 Some(&device),                    // Use the default device
                                 "record",                         // Description of our stream
@@ -2462,3 +2462,4 @@ mod test {
         assert!(select_server_uid_for_user_main_ipc(&[501, 502], None, false).is_err());
     }
 }
+
